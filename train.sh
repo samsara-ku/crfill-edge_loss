@@ -24,6 +24,7 @@ PREFIX="--dataset_mode_train trainimage \
 --validation_freq 10000 \
 --gpu_ids 0,1 \
 --niter 50 "
+
 python train.py \
 	${PREFIX} \
 	--batchSize ${BSIZE0} \
