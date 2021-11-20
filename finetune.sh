@@ -1,10 +1,10 @@
 ##BSIZE0=48 # stage coarse
-BSIZE=96 # 96:64G
+BSIZE=16 # 96:64G
 BSIZE0=$((BSIZE/2))
 NWK=16
 PREFIX="--dataset_mode_train trainimage \
 --name objrmv_finetune \
---gpu_ids 0,1 \
+--gpu_ids 0 \
 --dataset_mode_val valimage \
 --train_image_dir ./datasets/places/places2 \
 --train_image_list ./datasets/places/train_example.txt \
@@ -15,7 +15,7 @@ PREFIX="--dataset_mode_train trainimage \
 --val_mask_dir ./datasets/places2sample1k_val/places2samples1k_256_mask_square128 \
 --no_vgg_loss \
 --no_ganFeat_loss \
---gpu_ids 0,1 \
+--gpu_ids 0 \
 --load_size 640 \
 --crop_size 256 \
 --model arrange \

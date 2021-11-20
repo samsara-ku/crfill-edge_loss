@@ -1,0 +1,218 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+
+        {
+            "name": "train_coarse",
+            "type": "python",
+            "cwd": "/home/user/Desktop/Hansoo/2021-2/DGM/DGM_FinalProject/crfill",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset_mode_train", 
+                "trainimage", 
+                "--gpu_ids",
+                "0", 
+                "--name", 
+                "debug", 
+                "--dataset_mode_val",
+                "valimage",
+
+                "--train_image_dir", "./datasets/places/places2", 
+                "--train_image_list", "./datasets/places/train_example.txt",
+                "--path_objectshape_list", "./datasets/object_shapes.txt",
+                "--path_objectshape_base", "./datasets/object_masks",
+                "--val_image_dir", "./datasets/places2sample1k_val/places2samples1k_crop256",
+                "--val_image_list", "./datasets/places2sample1k_val/files.txt",
+                "--val_mask_dir", "./datasets/places2sample1k_val/places2samples1k_256_mask_square128",
+                "--no_vgg_loss",
+                "--no_ganFeat_loss",
+                "--load_size", "640",
+                "--crop_size", "256",
+                "--model", "inpaint",
+                "--netG", "baseconv",
+                "--netD", "deepfill",
+                "--preprocess_mode", "scale_shortside_and_crop",
+                "--validation_freq", "10000",
+                "--gpu_ids", "0",
+                "--niter", "50",
+
+                "--batchSize", "16", 
+                "--nThreads", "16", 
+                "--no_fine_loss", 
+                "--update_part", "coarse", 
+                "--no_gan_loss",
+                "--freeze_D", 
+                "--niter",  "1" 
+            ]
+        },
+        
+        {
+            "name": "train_refine",
+            "type": "python",
+            "cwd": "/home/user/Desktop/Hansoo/2021-2/DGM/DGM_FinalProject/crfill",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset_mode_train", 
+                "trainimage", 
+                "--gpu_ids",
+                "0", 
+                "--name", 
+                "debug", 
+                "--dataset_mode_val",
+                "valimage",
+                "--load_baseg",
+
+                "--train_image_dir", "./datasets/places/places2", 
+                "--train_image_list", "./datasets/places/train_example.txt",
+                "--path_objectshape_list", "./datasets/object_shapes.txt",
+                "--path_objectshape_base", "./datasets/object_masks",
+                "--val_image_dir", "./datasets/places2sample1k_val/places2samples1k_crop256",
+                "--val_image_list", "./datasets/places2sample1k_val/files.txt",
+                "--val_mask_dir", "./datasets/places2sample1k_val/places2samples1k_256_mask_square128",
+                "--no_vgg_loss",
+                "--no_ganFeat_loss",
+                "--load_size", "640",
+                "--crop_size", "512",
+                "--model", "inpaint",
+                "--netG", "baseconv",
+                "--netD", "deepfill",
+                "--preprocess_mode", "scale_shortside_and_crop",
+                "--validation_freq", "10000",
+                "--gpu_ids", "0",
+                "--niter", "50",
+
+                "--batchSize", "16", 
+                "--nThreads", "16", 
+                "--update_part", "fine", 
+                "--continue_train", 
+                "--niter",  "1"
+            ]
+        }, 
+
+        {
+            "name": "train_all",
+            "type": "python",
+            "cwd": "/home/user/Desktop/Hansoo/2021-2/DGM/DGM_FinalProject/crfill",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset_mode_train", 
+                "trainimage", 
+                "--gpu_ids",
+                "0", 
+                "--name", 
+                "debug", 
+                "--dataset_mode_val",
+                "valimage",
+
+                "--train_image_dir", "./datasets/places/places2", 
+                "--train_image_list", "./datasets/places/train_example.txt",
+                "--path_objectshape_list", "./datasets/object_shapes.txt",
+                "--path_objectshape_base", "./datasets/object_masks",
+                "--val_image_dir", "./datasets/places2sample1k_val/places2samples1k_crop256",
+                "--val_image_list", "./datasets/places2sample1k_val/files.txt",
+                "--val_mask_dir", "./datasets/places2sample1k_val/places2samples1k_256_mask_square128",
+                "--no_vgg_loss",
+                "--no_ganFeat_loss",
+                "--load_size", "640",
+                "--crop_size", "256",
+                "--model", "inpaint",
+                "--netG", "baseconv",
+                "--netD", "deepfill",
+                "--preprocess_mode", "scale_shortside_and_crop",
+                "--validation_freq", "10000",
+                "--gpu_ids", "0",
+                "--niter", "50",
+
+                "--batchSize", "16", 
+                "--nThreads", "16", 
+                "--update_part", "all", 
+                "--continue_train", 
+                "--niter",  "1"
+            ]
+        }, 
+        {
+            "name": "train_all2",
+            "type": "python",
+            "cwd": "/home/user/Desktop/Hansoo/2021-2/DGM/DGM_FinalProject/crfill",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset_mode_train", 
+                "trainimage", 
+                "--gpu_ids",
+                "0", 
+                "--name", 
+                "debugarr0", 
+                "--dataset_mode_val",
+                "valimage",
+
+                "--train_image_dir", "./datasets/places/places2", 
+                "--train_image_list", "./datasets/places/train_example.txt",
+                "--path_objectshape_list", "./datasets/object_shapes.txt",
+                "--path_objectshape_base", "./datasets/object_masks",
+                "--val_image_dir", "./datasets/places2sample1k_val/places2samples1k_crop256",
+                "--val_image_list", "./datasets/places2sample1k_val/files.txt",
+                "--val_mask_dir", "./datasets/places2sample1k_val/places2samples1k_256_mask_square128",
+                "--no_vgg_loss",
+                "--no_ganFeat_loss",
+                "--load_size", "640",
+                "--crop_size", "256",
+                "--model", "arrange",
+                "--netG", "twostagend",
+                "--baseG", "baseconv",
+                "--norm_type", "1",
+                
+                "--netD", "deepfill",
+                "--preprocess_mode", "scale_shortside_and_crop",
+                "--load_base_g", "./checkpoints/debug/latest_net_G.pth",
+                "--load_base_d", "./checkpoints/debug/latest_net_D.pth",
+                "--lambda_ref", "0.5",
+                "--lambda_l1", "1",
+
+                "--batchSize", "16", 
+                "--nThreads", "16", 
+                "--update_part", "all", 
+                "--niter",  "10"
+            ]
+        }, 
+        {
+            "name": "test",
+            "type": "python",
+            "cwd": "/home/user/Desktop/Hansoo/2021-2/DGM/DGM_FinalProject/crfill",
+            "request": "launch",
+            "program": "test.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--batchSize", "1",
+                "--nThreads", "1",
+                "--name", "objrmv", 
+                "--dataset_mode", "testimage",
+                "--image_dir", "./datasets/places2sample1k_val/places2samples1k_crop256", 
+                "--mask_dir", "./datasets/places2sample1k_val/places2samples1k_256_mask_square128",
+                "--output_dir", "./results",
+                "--model", "inpaint",
+                "--netG", "baseconv",
+                "--which_epoch", "latest",
+                "--load_baseg"
+            ]
+        }
+    ]
+}

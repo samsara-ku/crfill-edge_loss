@@ -5,3 +5,5 @@ checkpoints
 datasets
 examples/*
 datasets/*
+results/*
+test.png

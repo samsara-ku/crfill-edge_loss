@@ -26,6 +26,8 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--dataset_mode_val', type=str, required=False)
 
         # for training
+        parser.add_argument('--load_baseg', action="store_true")
+
         parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')
         parser.add_argument('--which_epoch', type=str, default='latest', help='which epoch to load? set to latest to use latest cached model')
         parser.add_argument('--niter', type=int, default=50, help='# of iter at starting learning rate. This is NOT the total #epochs. Totla #epochs is niter + niter_decay')

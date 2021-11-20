@@ -359,7 +359,7 @@ class BaseConvGenerator(BaseNetwork):
         x = self.conv4_downsample(x)
         x = self.conv5(x)
         x = self.conv6(x)
-        x = self.conv7_atrous(x)
+        x = self.conv7_atrous(x) #dilated gated conv --> increase receptive field 
         x = self.conv8_atrous(x)
         x = self.conv9_atrous(x)
         x = self.conv10_atrous(x)

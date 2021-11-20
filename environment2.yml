@@ -1,0 +1,18 @@
+name: testcrfill2
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9.0
+  - pytorch=1.8.0
+  - torchvision
+  - tqdm
+  - flask=1.1.2
+  - requests=2.24.0
+  - pillow=8.0.1
+  - pip==20.2.4
+  - pip:
+    - dill==0.3.4
+    - opencv-python==4.5.3.56
+prefix: /home/zeng/anaconda3/envs/testcrfill2
