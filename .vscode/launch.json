@@ -49,7 +49,7 @@
                 "--gpu_ids", "0",
                 "--niter", "50",
 
-                "--batchSize", "16", 
+                "--batchSize", "12", 
                 "--nThreads", "16", 
                 "--no_fine_loss", 
                 "--update_part", "coarse", 
@@ -75,7 +75,7 @@
                 "debug", 
                 "--dataset_mode_val",
                 "valimage",
-                "--load_baseg",
+                // "--load_baseg",
 
                 "--train_image_dir", "./datasets/places/places2", 
                 "--train_image_list", "./datasets/places/train_example.txt",
@@ -87,7 +87,7 @@
                 "--no_vgg_loss",
                 "--no_ganFeat_loss",
                 "--load_size", "640",
-                "--crop_size", "512",
+                "--crop_size", "256",
                 "--model", "inpaint",
                 "--netG", "baseconv",
                 "--netD", "deepfill",
@@ -140,7 +140,7 @@
                 "--gpu_ids", "0",
                 "--niter", "50",
 
-                "--batchSize", "16", 
+                "--batchSize", "12", 
                 "--nThreads", "16", 
                 "--update_part", "all", 
                 "--continue_train", 
@@ -179,7 +179,7 @@
                 "--netG", "twostagend",
                 "--baseG", "baseconv",
                 "--norm_type", "1",
-                
+
                 "--netD", "deepfill",
                 "--preprocess_mode", "scale_shortside_and_crop",
                 "--load_base_g", "./checkpoints/debug/latest_net_G.pth",
@@ -187,7 +187,7 @@
                 "--lambda_ref", "0.5",
                 "--lambda_l1", "1",
 
-                "--batchSize", "16", 
+                "--batchSize", "12", 
                 "--nThreads", "16", 
                 "--update_part", "all", 
                 "--niter",  "10"

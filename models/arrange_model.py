@@ -18,11 +18,11 @@ class ArrangeModel(InpaintModel):
         if opt.continue_train:
             self.netD_aux = util.load_network(self.netD_aux, 'D_aux', opt.which_epoch, opt)
         if opt.load_base_g is not None:
-            print(f"looad {opt.load_base_g}")
+            print(f"load {opt.load_base_g}")
             self.netG.baseg = util.load_network_path(
                     self.netG.baseg, opt.load_base_g)
         if opt.load_base_d is not None:
-            print(f"looad {opt.load_base_d}")
+            print(f"load {opt.load_base_d}")
             self.netD = util.load_network_path(
                     self.netD, opt.load_base_d)
 
@@ -116,11 +116,11 @@ class ArrangeModel(InpaintModel):
             raise NotImplementedError
         if not self.opt.no_vgg_loss:
             raise NotImplementedError
-        coarse_image, fake_image, aux_image, recon_aux = self.generate_fake(
+        coarse_image, fake_image, aux_image, recon_aux = self.generate_fake( # aux_image --> xb, recon_aux --> recon image
                 inputs, real_image, mask)
         composed_image = fake_image*mask + inputs*(1-mask)
         G_losses = self.g_image_loss(coarse_image, fake_image, composed_image, real_image, mask)
-
+     
         composed_image_aux = aux_image*mask + inputs*(1-mask)
         _netD = self.netD
         self.netD = self.netD_aux

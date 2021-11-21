@@ -10,6 +10,7 @@ PREFIX="--dataset_mode_train trainimage \
 --train_image_list ./datasets/places/train_example.txt \
 --path_objectshape_list ./datasets/object_shapes.txt \
 --path_objectshape_base ./datasets/object_masks \
+
 --val_image_dir ./datasets/places2sample1k_val/places2samples1k_crop256 \
 --val_image_list ./datasets/places2sample1k_val/files.txt \
 --val_mask_dir ./datasets/places2sample1k_val/places2samples1k_256_mask_square128 \
